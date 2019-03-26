@@ -42,12 +42,12 @@ document.querySelector('.btn-roll').addEventListener('click', function(){
         document.getElementById('dice-2').src = 'dice-' + dice2 + '.png';
 
         // 3. update the roundScore if the rolled num is not '1'
-        if(sumDice === 8 && lastDice === 8){
+        if(sumDice === 7 && lastDice === 7){
             //player lose all his score
             scores[activePlayer] = 0;
             document.querySelector('#score-' + activePlayer).textContent = '0';
             nextPlayer();
-        } else if(dice1 !== 1 && dice2 !== 1){
+        } else if(sumDice !== 6 && sumDice !== 8){
             // add score
             roundScore += sumDice;
             // DOM manipulation
